@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_09_195002) do
+ActiveRecord::Schema.define(version: 2020_09_10_164713) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "location"
     t.integer "effect"
+    t.integer "bow"
+    t.integer "arrows"
+    t.integer "spears"
+    t.integer "fruit"
   end
 
   create_table "useritems", force: :cascade do |t|
@@ -25,8 +29,10 @@ ActiveRecord::Schema.define(version: 2020_09_09_195002) do
 
   create_table "users", force: :cascade do |t|
     t.string "user_name"
-    t.integer "stats"
-    t.string "encrypted_password"
+    t.integer "skill"
+    t.integer "health"
+    t.integer "cleanliness"
+    t.integer "spirituality"
   end
 
 end

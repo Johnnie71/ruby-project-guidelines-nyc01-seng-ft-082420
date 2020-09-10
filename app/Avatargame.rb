@@ -16,6 +16,7 @@ class Avatargame
   private 
 
     def welcome
+        # pid = fork{ exec ‘afplay’, “https://www.youtube.com/watch?v=yIw6DSsaBIk&ab_channel=JamesHorner-Topic” } 
         puts "Welcome!!"
         sleep(2)
     end
@@ -25,11 +26,20 @@ class Avatargame
         answer = gets.chomp.downcase
         @user = User.find_or_create_by(user_name: answer)
         if @user == User.create 
-            stats << generate_stats
-            # will also need some way of tying in items...unsure how
-        sleep(1)
-        puts "Welcome, #{@user.user_name}!!!" 
-        sleep(3)
+            User.generate_stats
+            Items.generate_items
+            puts "Welcome to Pandora! #{@user.user_name}." 
+            #for new user this message is supposed to pop up
+            adventures
+        else
+            puts "Welcome, back to Pandora #{@user.user_name}!"
+            #for user that already exists
+            sleep(1)
+            puts "We've missed you!"
+            sleep(2)
+            adventures
+        end 
+        sleep(2)
     end
 
 
@@ -44,17 +54,16 @@ class Avatargame
             {"Swim along the mystical river?" => -> do swim end},
             {"Visit the Tree of Souls?" => -> do visit end}
         ]
-        prompt.select("", @adventure)
-    end
-
+        prompt.select("", @adventure) 
+    end  
 
     def train 
         system "clear"
         prompt = TTY::Prompt.new(active_color: :cyan)
-        puts "Pick and activity!?"
+        puts "Pick an activity!?"
         @train_options = [
-            {"Fly through the Hallelujah Mountains?" => -> do (gain_skill_method(2)) end},
-            {"Glide over the icy blue lagoon?" => -> do (energy_down_method(1)) end},
+            {"Fly through the Hallelujah Mountains?" => -> do (User.gain_skill) end},
+            {"Glide over the Icy Blue Lagoon?" => -> do (User.lower_energy) end},
             {"Leave Mountain Banshee to rest?" => -> do adventures end} 
         ]
         prompt.select("", @train_options)
@@ -67,8 +76,8 @@ class Avatargame
         puts "Beautful! Isn't it...What would you like the do?"
         sleep(1)
         @forest_options = [
-            {"Walk through bushery" => -> do (energy_down_method(1)) end},
-            {"Stroll into the bioluminescent pathway" => -> do (gain_energy_method(2)) end},
+            {"Walk through bushery" => -> do (User.lower_energy) end},
+            {"Stroll into the bioluminescent pathway" => -> do (User.gain_energy) end},
             {"Leave forest" => -> do adventures end}
         ]
         prompt.select("", @forest_options) 
@@ -83,9 +92,9 @@ class Avatargame
         sleep(1)
         puts "what would you like to do in the water?"
         @swim_options = [
-            {"Go for a dive" => -> do (gain_cleanliness_method(2)) && (energy_down_method(1)) end},
-            {"Go and hunt for fish" => -> do (gain_skill_method(3)) && (spiritual_down_method(5)) end},
-            {"Play with fellow Navi" => -> do (gain_spiritual_method(5)) end},
+            {"Go for a dive" => -> do (User.gain_cleanliness) && (User.lower_energy) end},
+            {"Go and hunt for fish" => -> do (User.gain_skill) && (User.lower_spirituality) end},
+            {"Play with fellow Navi" => -> do (User.gain_spiritualty) end},
             {"Leave the river" => -> do adventures end}
         ]
         prompt.select("", @swim_options) 
@@ -99,12 +108,13 @@ class Avatargame
         sleep (1)
         puts "What would you like to do here?"
         @visit_options = [
-            {"Meditate under the Tree of Souls" => -> do (gain_spiritual_method(4)) && (gain_energy_method(2)) end},
+            {"Meditate under the Tree of Souls" => -> do (User.gain_spiritualty) && (User.gain_energy) end},
             # {"Connect with Ewya through the Tree"}, #this needs to save/delete data
             {"Leave the Tree" => -> do adventures end}
             ]
         prompt.select("", @visit_options) 
     end 
 
-   end  
+
+ 
 end

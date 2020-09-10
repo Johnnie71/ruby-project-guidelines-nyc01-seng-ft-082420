@@ -1,54 +1,39 @@
 class User < ActiveRecord::Base
-    has_many :useritems
-    has_many :item, through: :useritems
-
-
-    attr_writer :skill
+    has_many :useritems 
+    has_many :items, through: :useritems
 
     def generate_stats
-        stats = {
-            :stats => {
-                :skill => 10,
-                :energy => 10,
-                :cleanliness => 10,
-                :spiritual => 10,
-                }
-              }
+        User.skill = rand(1..5)
+        User.health = rand(1..5)
+        User.cleanliness = rand(1..5)
+        User.spirituality = rand(1..5)
     end
 
- 
-    def gain_skill_method(num)
-        # stats.each do |index, value|
-        #     [:stats][:skill]
-        # self.generate_stats[:stats][:skill] += num
-    end
 
-    # gain energy
-    def gain_energy_method(num)
-        energy = 8
-        self.energy += num
-    end
-
-    # energy down
-    def energy_down_method(num)
-        energy = 8
-        self.energy -= num
-    end
-
-    # gain cleanliness
-    def gain_cleanliness_method(num)
-        self.cleanliness += num
+    def gain_skill
+        User.skill += [2,3,4].sample 
+        # self.skill.rand(1..3)  
     end 
 
-    # gain spiritual
-    def gain_spiritual_method(num)
-        self.spiritual += num
+    def gain_energy
+        self.energy += rand(1..3)
     end
 
-    # spiritual down
-    def spiritual_down_method(num)
-        self.spiritual -= num
+    def lower_energy
+        self.energy -= rand(1..3)
+    end
+    
+    def gain_cleanliness
+        self.cleanliness += rand(1..3)
+    end 
+
+    def gain_spiritualty
+        self.spirituality += rand(1..3)
     end
 
+    def lower_spirituality
+        self.spirituality -= rand(1..3)
+    end
+# binding.pry
 end
 
