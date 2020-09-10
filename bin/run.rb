@@ -1,5 +1,16 @@
 require_relative '../config/environment'
 
 
+# prompt = TTY::Prompt.new
 
-puts "HELLO WORLD"
+# puts "Welcome!!"
+
+# prompt.select("Login or Create User", %w(Login Create))
+
+
+# puts "Welcome to Pandora!!"
+
+## TO TEST LATER ##
+
+app = Avatargame.new
+app.run
