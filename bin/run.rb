@@ -1,4 +1,5 @@
 require_relative '../config/environment'
+require 'pry'
 
 
 # prompt = TTY::Prompt.new
@@ -14,3 +15,5 @@ require_relative '../config/environment'
 
 app = Avatargame.new
 app.run
+
+
