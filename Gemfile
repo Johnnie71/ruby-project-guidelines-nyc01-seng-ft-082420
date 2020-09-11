@@ -9,4 +9,6 @@ gem 'sqlite3'
 gem 'pry'
 gem "tty-prompt"
 gem 'colorize'
+gem 'tty-spinner'
+# gem "catpix"
 

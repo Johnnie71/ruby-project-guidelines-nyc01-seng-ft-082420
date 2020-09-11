@@ -297,7 +297,7 @@ class OpeningEyes
         end
 
         def self.animation
-            5.times do
+            2.times do
               OpeningEyes.frame_one
               OpeningEyes.frame_two
               OpeningEyes.frame_three

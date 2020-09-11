@@ -23,6 +23,16 @@ Stretch Goals for this App
 Given time constraints, we would've liked to add more story paths ("adventures") for the Player to interact with Pandora. We wanted to include a secret level that could
 only be unlocked if the Player had hit a certain level in their attributes. 
 
+Directions:
+Use up and down keys to scroll through list
+
+"Enter" key to select
+
+Choose your adventure!
+
+Save and see stats at the Tree of Souls!
+
+
 
 
 
