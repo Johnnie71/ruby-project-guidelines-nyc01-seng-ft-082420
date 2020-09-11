@@ -4,18 +4,17 @@ class Item < ActiveRecord::Base
     has_many :users, through: :useritems
 
     @@Inventory = []
-     bow = 0
 
-    # def generate_items
-    #     self.bow = 1
-    #     self.arrow = rand(2..5)
-    #     self.spear = rand(2)
-    #     self.fruit = rand(1..3)
-    #     Inventory << self.generate_items
-    # end
+    def generate_items
+        self.bow = 1
+        self.arrow = rand(2..5)
+        self.spear = rand(2)
+        self.fruit = rand(1..3)
+        Inventory << self.generate_items
+    end
 
-    def add_to_items(item)
-        @@Inventory << item
+    def self.add_to_items(item)
+        @@Inventory << item.to_i
     end
 
     def check_items

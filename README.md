@@ -1,3 +1,36 @@
+Adventures of Avatar!
+
+Inspired by the movie Avatar by James Cameron, we invite you to interact with the world of Pandora. Playeres should sign in with a unique username. From there,
+choose your adventure! Will you be soaring through the mountains? Fighting off monsters? Playing with your fellow Navi? Or perhaps meditating under the Tree of Souls?
+Whatever you choose, be sure to keep your stats and items in mind so you don't run into trouble. 
+
+Installation Instructions:
+
+Clone the repository
+Run bundle ("bundle install")
+Terminal : ruby bin/run.rb
+
+User Stories
+
+As a user you can:
+    choose between four adventures
+    collect items
+    check your items
+    level up or down your stats
+
+Stretch Goals for this App
+
+Given time constraints, we would've liked to add more story paths ("adventures") for the Player to interact with Pandora. We wanted to include a secret level that could
+only be unlocked if the Player had hit a certain level in their attributes. 
+
+
+
+
+
+
+
+
+
 # Module One Final Project Guidelines
 
 Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
