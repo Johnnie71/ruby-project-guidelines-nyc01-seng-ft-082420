@@ -391,15 +391,15 @@ class Avatargame
     def user_exit 
         puts "Until next time!!!!"
         sleep(1)
-        exit!
         end_beginning_music
+        exit!
     end
 
     def play_beginning_music
         pid = fork{ system 'afplay', "lib/jakeavatarworld.mp3"}
     end
     def end_beginning_music
-        pid = fork{ system ‘killall’, “afplay” }
+        pid = fork{ system 'killall', 'afplay' }
     end
 
     def play_forest_music
@@ -407,7 +407,7 @@ class Avatargame
     end
 
     def end_forest_music
-        pid = fork{ system ‘killall’, “afplay” }
+        pid = fork{ system 'killall', 'afplay' }
     end
 
 end
