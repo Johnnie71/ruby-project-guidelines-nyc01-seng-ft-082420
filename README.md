@@ -1,5 +1,7 @@
 Adventures of Avatar!
 
+![Alt Text](https://media.giphy.com/media/f4F9XFpfyNG3C/giphy.gif)
+
 Inspired by the movie Avatar by James Cameron, we invite you to interact with the world of Pandora. Playeres should sign in with a unique username. From there,
 choose your adventure! Will you be soaring through the mountains? Fighting off monsters? Playing with your fellow Navi? Or perhaps meditating under the Tree of Souls?
 Whatever you choose, be sure to keep your stats and items in mind so you don't run into trouble. 
