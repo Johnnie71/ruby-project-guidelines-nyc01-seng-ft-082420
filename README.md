@@ -35,11 +35,7 @@ Choose your adventure!
 Save and see stats at the Tree of Souls!
 
 
-
-
-
-
-
+![Alt Text](https://media.giphy.com/media/AxhxIcTMEMqR2/giphy.gif)
 
 
 
