@@ -1,4 +1,4 @@
-Adventures of Avatar!
+# Adventures of Avatar!
 
 ![Alt Text](https://media.giphy.com/media/f4F9XFpfyNG3C/giphy.gif)
 
@@ -6,13 +6,16 @@ Inspired by the movie Avatar by James Cameron, we invite you to interact with th
 choose your adventure! Will you be soaring through the mountains? Fighting off monsters? Playing with your fellow Navi? Or perhaps meditating under the Tree of Souls?
 Whatever you choose, be sure to keep your stats and items in mind so you don't run into trouble. 
 
-Installation Instructions:
+## Tech Stack
+  * Ruby
+
+## Installation Instructions:
 
 Clone the repository
 Run bundle ("bundle install")
 Terminal : ruby bin/run.rb
 
-User Stories
+## User Stories
 
 As a user you can:
     choose between four adventures
@@ -20,12 +23,12 @@ As a user you can:
     check your items
     level up or down your stats
 
-Stretch Goals for this App
+## Stretch Goals for this App
 
 Given time constraints, we would've liked to add more story paths ("adventures") for the Player to interact with Pandora. We wanted to include a secret level that could
 only be unlocked if the Player had hit a certain level in their attributes. 
 
-Directions:
+## Directions:
 Use up and down keys to scroll through list
 
 "Enter" key to select
